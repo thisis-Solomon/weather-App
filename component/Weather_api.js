@@ -3,7 +3,7 @@ const API_STEM ="http://api.openweathermap.org/data/2.5/weather?";
 
 function cityUrl(city){
     return (
-        `${API_STEM}q=${city}&units=imperial&APPID=${WEATHER_API_KEY}`
+        `${API_STEM}q=${city}&units=metrics&APPID=${WEATHER_API_KEY}`
     )
 }
 
@@ -14,6 +14,8 @@ function fetchForecast(city){
         .then(responseJSON => {
             return{
                 main: responseJSON.weather[0].main,
+                country: responseJSON.sys.country,
+                icon: responseJSON.weather[0].icon,
                 description: responseJSON.weather[0].description,
                 temp: responseJSON.main.temp
             };

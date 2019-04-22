@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import {
     View,
     Text,
-    StyleSheet
 } from 'react-native';
 
 export default class Forecast extends Component {
     render() { 
         return ( 
-            <View>
+            <View style = {{alignItems: 'center', fontSize: 14}}>
+                <Text>
+                    {this.props.country}.
+                </Text> 
                 <Text>
                     {this.props.main}
                 </Text>
