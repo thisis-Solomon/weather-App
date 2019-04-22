@@ -5,6 +5,17 @@ import Weather_api from './Weather_api'
 
 
 export default class Weather extends Component {
+    static navigationOptions = {
+        title: 'Todays Weather Forecast',
+        headerStyle: {
+          backgroundColor: '#AAAAAA',
+        },
+        headerTitleStyle: { 
+          textAlign:"center", 
+          flex:1,
+          fontSize: 25,
+        },
+      };
     constructor(props) {
         super(props);
         this.state = { 
@@ -59,7 +70,7 @@ export default class Weather extends Component {
                 </Text>
                 {content}
                 <TextInput
-                    placeholder = "Search a city"
+                    placeholder = "Your City ?"
                     style = {styles.input}
                     onSubmitEditing = {this._handleInput}
                 />
