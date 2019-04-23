@@ -60,24 +60,20 @@ export default class Weather extends Component {
             )
         }
         return ( 
-            <View style = {styles.container}>
+            <View style = {{padding: 25, alignItems: 'center'}}>
             <StatusBar hidden/>
-              <Image
-                source={require("./weather-signs.jpg")}
-                resizeMode="cover"
-                style={styles.backdrop}
-              />
               <View> 
-                <Text style = {{fontSize: 22, fontStyle: 'normal', paddingBottom: 200}}>
+                <Text style = {{fontSize: 25, fontStyle: 'italic', padding: 10,  alignContent: 'center'}}>
                     {this.state.time}
                 </Text>
               </View>
 
-              <View>
-                 <Text style = {{alignItems: 'center'}}>
-                {this.state.city},
+              <View >
+                <Text style = {{fontSize: 28, alignContent: 'center'}}>
+                  {this.state.city}
                 </Text>
-                {content}
+                  {content}
+
               </View>
 
                 <TextInput
@@ -105,8 +101,5 @@ const styles = StyleSheet.create({
         padding: 2,
         width: 130,
         textAlign: 'center',
-        
-        
-
     }
 })
