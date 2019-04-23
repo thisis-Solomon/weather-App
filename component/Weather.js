@@ -6,7 +6,7 @@ import Weather_api from './Weather_api'
 
 export default class Weather extends Component {
     static navigationOptions = {
-        title: 'Todays Weather Forecast',
+        title: `Today\'s Weather Forecast`,
         headerStyle: {
           backgroundColor: '#AAAAAA',
         },
@@ -62,13 +62,24 @@ export default class Weather extends Component {
         return ( 
             <View style = {styles.container}>
             <StatusBar hidden/>
-                <Text>
+              <Image
+                source={require("./weather-signs.jpg")}
+                resizeMode="cover"
+                style={styles.backdrop}
+              />
+              <View> 
+                <Text style = {{fontSize: 22, fontStyle: 'normal', paddingBottom: 200}}>
                     {this.state.time}
                 </Text>
-                <Text style = {{alignItems: 'center'}}>
+              </View>
+
+              <View>
+                 <Text style = {{alignItems: 'center'}}>
                 {this.state.city},
                 </Text>
                 {content}
+              </View>
+
                 <TextInput
                     placeholder = "Your City ?"
                     style = {styles.input}
@@ -93,7 +104,8 @@ const styles = StyleSheet.create({
         height: 40,
         padding: 2,
         width: 130,
-        textAlign: 'center'
+        textAlign: 'center',
+        
         
 
     }
